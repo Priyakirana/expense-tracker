@@ -24,10 +24,10 @@ kind: Service
 metadata:
   name: expense-service
 spec:
-  type: LoadBalancer
+  type: NodePort
   selector:
     app: expense-tracker
   ports: 
     - port: 80
       targetPort: 5000
-
+      nodePort: 30007
