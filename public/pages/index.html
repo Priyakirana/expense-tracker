@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Expense Pro</title>
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
@@ -13,18 +13,18 @@
   <ul>
     <li>Home</li>
     <li>Features</li>
-    <li>Login</li>
-    <button class="btn">Get Started</button>
+    <li onclick="window.location='login.html'">Login</li>
+    <button class="btn" onclick="window.location='signup.html'">Get Started</button>
   </ul>
 </nav>
 
-<!-- HERO SECTION -->
+<!-- HERO -->
 <section class="hero">
   <div class="hero-left">
     <h1>Manage Your Expenses Smartly</h1>
     <p>Track spending, control budget and split expenses easily.</p>
 
-    <button class="primary">Start Now</button>
+    <button class="primary" onclick="window.location='signup.html'">Start Now</button>
     <button class="secondary">Learn More</button>
   </div>
 
@@ -55,7 +55,7 @@
   <div id="timeline"></div>
 </section>
 
-<!-- FAB BUTTON -->
+<!-- FAB -->
 <button class="fab" onclick="openModal()">+</button>
 
 <!-- MODAL -->
@@ -78,6 +78,6 @@
   </div>
 </div>
 
-<script src="../js/app.js"></script>
+<script src="/js/app.js"></script>
 </body>
 </html>

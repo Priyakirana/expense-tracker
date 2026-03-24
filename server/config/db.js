@@ -1,8 +1,19 @@
 const mongoose = require("mongoose");
 
 const connectDB = async () => {
-  await mongoose.connect("mongodb://127.0.0.1:27017/expense_neon");
-  console.log("MongoDB Connected");
+  let retries = 5;
+
+  while (retries) {
+    try {
+      await mongoose.connect("mongodb://mongodb-service:27017/expense_neon");
+      console.log("MongoDB Connected");
+      break;
+    } catch (err) {
+      console.log("MongoDB not ready, retrying...");
+      retries--;
+      await new Promise(res => setTimeout(res, 5000));
+    }
+  }
 };
 
 module.exports = connectDB;

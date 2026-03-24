@@ -22,13 +22,13 @@ async function login() {
     })
   });
 
-  const user = await res.json();
+  const data = await res.json();
 
-  if (!user._id) {
+  if (!data.user?._id) {
     alert("Login failed");
     return;
   }
 
-  localStorage.setItem("user", JSON.stringify(user));
+  localStorage.setItem("user", JSON.stringify(data.user));
   window.location = "index.html";
 }

@@ -2,6 +2,10 @@ function openModal() {
   document.getElementById("modal").style.display = "block";
 }
 
+function closeModal() {
+  document.getElementById("modal").style.display = "none";
+}
+
 async function addExpense() {
   const user = JSON.parse(localStorage.getItem("user"));
   if (!user) return alert("Login first");
@@ -17,7 +21,7 @@ async function addExpense() {
     })
   });
 
-  document.getElementById("modal").style.display = "none";
+  closeModal();
   load();
 }
 
@@ -45,11 +49,8 @@ async function load() {
     timeline.appendChild(div);
   });
 
-  const totalEl = document.getElementById("total");
-  const balEl = document.getElementById("balance");
-
-  if (totalEl) totalEl.innerText = "₹" + total;
-  if (balEl) balEl.innerText = "₹" + (10000 - total);
+  document.getElementById("total").innerText = "₹" + total;
+  document.getElementById("balance").innerText = "₹" + (10000 - total);
 }
 
 load();
